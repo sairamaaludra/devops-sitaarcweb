@@ -1,0 +1,17 @@
+apps:
+  - script   : node_modules/@angular/cli/bin/ng
+    name     : 'sfc_web_ui_changes'
+    args     : 'serve --disable-host-check'
+    instances: 1
+    exec_mode: cluster
+    autorestart: true
+    watch: false
+    env:
+      NODE_ENV: development
+      PORT: 3360
+    env_staging:
+      NODE_ENV: staging
+      PORT: 3356
+    env_production:
+      NODE_ENV: production
+      PORT: 3355
